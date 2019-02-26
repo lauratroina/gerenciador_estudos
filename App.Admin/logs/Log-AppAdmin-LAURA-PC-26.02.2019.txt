@@ -1,0 +1,46 @@
+2019-02-26 00:40:56,482 [9] ERROR AppAdmin [C:\Users\Laura\Desktop\admin-padrao\desenvolvimento\App.Admin\Controllers\UsuarioController.cs][52][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'Usuario' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.UsuarioADO.Listar(Int32 skip, Int32 take, String palavraChave, Boolean somenteAtivos) na C:\Users\Laura\Desktop\admin-padrao\desenvolvimento\App.Lib\DAL\ADO\UsuarioADO.cs:linha 217
+   em App.Admin.Controllers.UsuarioController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\admin-padrao\desenvolvimento\App.Admin\Controllers\UsuarioController.cs:linha 37
+ClientConnectionId:bdd72ff1-4958-4cec-afcd-2d08dba6d698
+Error Number:208,State:1,Class:16
+2019-02-26 00:41:01,851 [9] ERROR AppAdmin [C:\Users\Laura\Desktop\admin-padrao\desenvolvimento\App.Admin\Controllers\UsuarioController.cs][52][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'Usuario' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.UsuarioADO.Listar(Int32 skip, Int32 take, String palavraChave, Boolean somenteAtivos) na C:\Users\Laura\Desktop\admin-padrao\desenvolvimento\App.Lib\DAL\ADO\UsuarioADO.cs:linha 217
+   em App.Admin.Controllers.UsuarioController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\admin-padrao\desenvolvimento\App.Admin\Controllers\UsuarioController.cs:linha 37
+ClientConnectionId:bdd72ff1-4958-4cec-afcd-2d08dba6d698
+Error Number:208,State:1,Class:16
