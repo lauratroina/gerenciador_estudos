@@ -12,23 +12,25 @@ namespace App.Lib.Entity
         public string Login { get; set; }
         public string Senha { get; set; }
         public string Email { get; set; }
-        private DateTime _UltimoAcesso ;
-        public int UsuarioPerfilID { get; set; }
         public bool Inativo { get; set; }
-        public int UsuarioID { get; set; }
-        public DateTime DataCadastro { get; set; }
-        public UsuarioPerfil Perfil { get; set; }
-
+        public UsuarioPerfil Perfil
+        {
+            get
+            {
+                return new UsuarioPerfil
+                {
+                    ID = 1,
+                    Nome = Entity.Enumerator.enumPerfilNome.master,
+                    Descricao = "Master"
+                };
+            }
+        }
         public bool Ativo
         {
             get { return !Inativo; }
             set { Inativo = !value; }
         }
-        
-        public DateTime UltimoAcesso
-        {
-            set { _UltimoAcesso = value; }
-            get { return (_UltimoAcesso == DateTime.MinValue) ? new DateTime(1899, 1, 1) : _UltimoAcesso; }
-        }
+
+        public
     }
 }

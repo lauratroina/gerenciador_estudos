@@ -12,7 +12,7 @@ namespace App.Admin.Models
 
         public string SenhaNova{ get; set; }
 
-        public IList<UsuarioPerfil> Perfils { get; set; }
+      
       
     }
 }

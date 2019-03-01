@@ -35,8 +35,8 @@ namespace App.Lib.DAL.ADO
         /// <returns></returns>
         public void Inserir(Usuario entidade)
         {
-            string SQL = @" INSERT INTO Usuario (Nome, Login, Senha, UsuarioPerfilID, Inativo, UsuarioID, DataCadastro, Email) 
-                                 VALUES (@Nome, @Login, @Senha, @UsuarioPerfilID, @Inativo, @UsuarioID, @DataCadastro, @Email) ";
+            string SQL = @" INSERT INTO Usuario (Nome, Login, Senha, Inativo, Email) 
+                                 VALUES (@Nome, @Login, @Senha, @Inativo, @Email) ";
 
             using (DbConnection con = _db.CreateConnection())
             {
@@ -57,10 +57,8 @@ namespace App.Lib.DAL.ADO
                                 Login = @Login, 
                                 Senha = @Senha,
                                 Nome = @Nome,
-                                UltimoAcesso = (CASE WHEN @UltimoAcesso > '1900-01-01' THEN @UltimoAcesso ELSE NULL END),
                                 Inativo = @Inativo, 
                                 Email = @Email,
-                                UsuarioPerfilID = @UsuarioPerfilID
                           WHERE ID=@ID ";
 
             using (DbConnection con = _db.CreateConnection())
@@ -79,41 +77,21 @@ namespace App.Lib.DAL.ADO
         {
             Usuario entidade = null;
             string SQL = @"SELECT TOP 1 
-                                u.ID, u.Nome, u.Login, u.Senha, u.UltimoAcesso, u.Inativo, u.DataCadastro, u.Email, u.UsuarioPerfilID, u.UsuarioID,
-                                p.ID, p.Nome as NomeDB, p.Descricao
+                                u.ID, u.Nome, u.Login, u.Senha, u.Inativo, u.Email, u.UsuarioID                               
                             FROM Usuario (NOLOCK) u
-                      INNER JOIN UsuarioPerfil (NOLOCK) p ON u.UsuarioPerfilID = p.ID
                            WHERE u.ID=@ID";
 
-            //using (DbConnection con = _db.CreateConnection())
-            //{
-            //    con.Open();
-
-            //    entidade = con.Query<Usuario, UsuarioPerfil, Usuario>(SQL, (usuario, perfil) =>
-            //    {
-            //        usuario.Perfil = perfil;
-            //        return usuario;
-            //    }, new
-            //    {
-            //        ID = id
-            //    }).FirstOrDefault();
-
-            //    con.Close();
-            //}
-            entidade = new Usuario
+            using (DbConnection con = _db.CreateConnection())
             {
-                Ativo = true,
-                Email = "lombardi.rdn@gmail.com",
-                ID = 1,
-                Login = "rudi",
-                Perfil = new UsuarioPerfil
+                con.Open();
+
+                entidade = con.Query<Usuario>(SQL, new
                 {
-                    ID = 1,
-                    Nome = Entity.Enumerator.enumPerfilNome.master,
-                    Descricao = "Master"
-                },
-                Nome = "Rudinei Lombardi"
-            };
+                    ID = id
+                }).FirstOrDefault();
+
+                con.Close();
+            }
 
             return entidade;
         }
