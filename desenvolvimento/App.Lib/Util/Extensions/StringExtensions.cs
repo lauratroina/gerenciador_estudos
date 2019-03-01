@@ -361,6 +361,20 @@ namespace System
             return Regex.Replace(html, stringPattern, "");
         }
 
+        public static string Truncate(this string s, int length)
+        {
+            if (s.Length > length - 3)
+            {
+                return s.Substring(0, length-3) + "...";
+            }
+            return s;
+        }
+
+        public static string LimpaHtml(this string s)
+        {
+            return Regex.Replace(s, "<.*?>", string.Empty);
+        }
+
 
     }
 }

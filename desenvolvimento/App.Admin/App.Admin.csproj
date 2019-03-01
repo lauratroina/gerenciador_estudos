@@ -24,6 +24,7 @@
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -173,6 +174,7 @@
     <Compile Include="Areas\Filemanager\Controllers\FilemanagerController.cs" />
     <Compile Include="Areas\Filemanager\FilemanagerAreaRegistration.cs" />
     <Compile Include="Controllers\ContaController.cs" />
+    <Compile Include="Controllers\FlashCardController.cs" />
     <Compile Include="Controllers\GerenciadorArquivoController.cs" />
     <Compile Include="Controllers\MateriaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -1132,6 +1134,8 @@
     <Content Include="Views\GerenciadorArquivo\Index.cshtml" />
     <Content Include="Views\Materia\Index.cshtml" />
     <Content Include="Views\Materia\Editar.cshtml" />
+    <Content Include="Views\FlashCard\Index.cshtml" />
+    <Content Include="Views\FlashCard\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

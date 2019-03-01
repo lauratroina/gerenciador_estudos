@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace App.Admin.Controllers
 {
-    public class MateriaController : Controller
+    public class MateriaController : MasterController
     {
         public ActionResult Index()
         {
@@ -45,7 +45,7 @@ namespace App.Admin.Controllers
             List<string[]> listaDados = new List<string[]>();
             foreach (var item in result)
             {
-                listaDados.Add(new string[] { item.Nome, item.ID.ToString() });
+                listaDados.Add(new string[] { item.Nome, item.CorBorda, item.CorFundo, item.CorTexto, item.ID.ToString() });
             }
 
             //Monta Json de Retorno
@@ -119,21 +119,6 @@ namespace App.Admin.Controllers
             return RedirectToAction("Index", "Materia", new { msg = "Dados Salvos com Sucesso", msgtipo = enumTipoMensagem.sucesso });
 
         }
-
-
-        private IList<UsuarioPerfil> CarregaDropPerfil()
-        {
-            IList<UsuarioPerfil> list = new List<UsuarioPerfil>();
-            try
-            {
-                UsuarioPerfilService empServ = new UsuarioPerfilService();
-                list = empServ.Listar();
-            }
-            catch (Exception ex)
-            {
-                LogUtil.Error(ex);
-            }
-            return list;
-        }
+        
     }
 }

@@ -114,8 +114,8 @@ C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\bin\Debug\pt\
 C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\obj\Debug\App.Lib.csprojAssemblyReference.cache
 C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\obj\Debug\App.Lib.csproj.CoreCompileInputs.cache
 C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\obj\Debug\App.Lib.csproj.CopyComplete
 C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\obj\Debug\App.Lib.dll
 C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\obj\Debug\App.Lib.pdb
+C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\obj\Debug\App.Lib.csprojAssemblyReference.cache

@@ -203,27 +203,18 @@ namespace App.Lib.DAL.ADO
 
             // SQL SERVER 2008
             string SQL = @"
-SELECT tbl.ID, tbl.Nome, tbl.Login, tbl.Senha, tbl.UltimoAcesso, tbl.Inativo, tbl.DataCadastro, tbl.Email, tbl.UsuarioPerfilID, tbl.UsuarioID,
-       tbl.perfilID as ID, tbl.perfilNomeDB as NomeDB, tbl.perfilDescricao as Descricao 
-  FROM (SELECT ROW_NUMBER() OVER(ORDER BY u.ID) AS NUMBER,
-               u.ID, u.Nome, u.Login, u.Senha, u.UltimoAcesso, u.Inativo, u.DataCadastro, u.Email, u.UsuarioPerfilID, u.UsuarioID,
-               p.ID as perfilID, p.Nome as perfilNomeDB, p.Descricao as perfilDescricao
-          FROM Usuario (NOLOCK)  u
-    INNER JOIN UsuarioPerfil (NOLOCK) p ON u.UsuarioPerfilID = p.ID
-    WHERE u.nome like @palavraChave " + (somenteAtivos ? " AND Inativo = 0" : "") + @"
-) tbl
-WHERE NUMBER BETWEEN @Skip AND (@Skip + @Take)
-ORDER BY tbl.perfilNomeDB, tbl.Login";
+                            SELECT tbl.ID, tbl.Nome, tbl.Login, tbl.Senha, tbl.UltimoAcesso, tbl.Inativo, tbl.DataCadastro, tbl.Email, tbl.UsuarioPerfilID, tbl.UsuarioID,
+                                   tbl.perfilID as ID, tbl.perfilNomeDB as NomeDB, tbl.perfilDescricao as Descricao 
+                              FROM (SELECT ROW_NUMBER() OVER(ORDER BY u.ID) AS NUMBER,
+                                           u.ID, u.Nome, u.Login, u.Senha, u.UltimoAcesso, u.Inativo, u.DataCadastro, u.Email, u.UsuarioPerfilID, u.UsuarioID,
+                                           p.ID as perfilID, p.Nome as perfilNomeDB, p.Descricao as perfilDescricao
+                                      FROM Usuario (NOLOCK)  u
+                                INNER JOIN UsuarioPerfil (NOLOCK) p ON u.UsuarioPerfilID = p.ID
+                                WHERE u.nome like @palavraChave " + (somenteAtivos ? " AND Inativo = 0" : "") + @"
+                            ) tbl
+                            WHERE NUMBER BETWEEN @Skip AND (@Skip + @Take)
+                            ORDER BY tbl.perfilNomeDB, tbl.Login";
 
-            /* SQL SERVER 2012
-            string SQL = @"SELECT u.ID, u.Nome, u.Login, u.Senha, u.UltimoAcesso, u.Inativo, u.DataCadastro, u.Email, u.UsuarioPerfilID, u.UsuarioID,
-                                    p.ID, p.Nome as NomeDB, p.Descricao
-                                    FROM Usuario (NOLOCK) u
-                                    INNER JOIN UsuarioPerfil (NOLOCK) p ON u.UsuarioPerfilID = p.ID
-                                    WHERE u.nome like @palavraChave " + (somenteAtivos ? " AND Inativo = 0" : "") + @"
-                                    ORDER BY p.Nome, u.Login
-                                    DESC OFFSET @Skip ROWS FETCH NEXT @Take ROWS ONLY";
-            */
 
             using (DbConnection con = _db.CreateConnection())
             {

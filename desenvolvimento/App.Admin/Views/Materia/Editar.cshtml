@@ -1,7 +1,75 @@
-﻿
+﻿@model Materia
+
 @{
-    ViewBag.Title = "Editar";
+    ViewBag.Title = "Matérias";
+    var subtitulo = "Inserir";
+    if (Model.ID > 0)
+    {
+        subtitulo = "Editar";
+    }
 }
 
-<h2>Editar</h2>
+<div class="page-header">
+    <div class="row">
+        <h1 class="col-xs-12 col-sm-4 text-center text-left-sm"><i class="fa fa-users page-header-icon"></i>&nbsp;&nbsp;@ViewBag.Title</h1>
+        <div class="col-xs-12 col-sm-8">
+            <div class="row">
+                <hr class="visible-xs no-grid-gutter-h">
+                <div class="pull-right col-xs-12 col-sm-auto"><a href="@Url.Action("Index", "Materia")" class="btn btn-labeled btn-flat" style="width: 100%;"><span class="btn btn-label icon fa fa-angle-left"></span>Voltar</a></div>
+            </div>
+        </div>
+    </div>
+</div>
 
+@using (Html.BeginForm("Salvar", "Materia", FormMethod.Post, new { @name = "frmCadastro", id = "frmCadastro", autocomplete = "off" }))
+{
+
+
+    @Html.HiddenFor(t => t.ID)
+
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">@subtitulo</span>
+        </div>
+        <div class="panel-body">
+
+            <!-- Default help text -->
+            <div class="form-group">
+                <label class="control-label" for="inputDefault-4">Nome</label>
+                @Html.TextBoxFor(t => t.Nome, new { maxlength = "255", @class = "form-control", validate = "required" })
+            </div> <!-- / .form-group -->
+            <!-- Default help text -->
+            <div class="form-group">
+                <label class="control-label" for="inputDefault-4">Cor de Fundo</label>
+                @Html.TextBoxFor(t => t.CorFundo, new { @class="form-control cor", validate="required"})
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="inputDefault-4">Cor da Borda</label>
+                @Html.TextBoxFor(t => t.CorBorda, new { @class = "form-control cor", validate = "required"})
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="inputDefault-4">Cor do Texto</label>
+                @Html.TextBoxFor(t => t.CorTexto, new { @class = "form-control cor", validate = "required"})
+            </div>
+
+            <div class="form-group">
+                <div class="pull-right">
+                    <button type="submit" class="btn-success btn btn-flat btn-labeled"><span class="btn-label icon fa fa-save"></span>Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script>
+
+    init.push(function () {
+        $('.cor').minicolors({
+            control: 'hue',
+            position: 'bottom left',
+            theme: 'bootstrap'
+        });
+    });
+
+</script>

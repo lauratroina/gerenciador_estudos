@@ -240,3 +240,434 @@ System.Data.SqlClient.SqlException (0x80131904): O identificador de várias parte
    em App.Admin.Controllers.MateriaController.Editar(Int32 id) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\MateriaController.cs:linha 74
 ClientConnectionId:e64e6ae4-7211-40e3-92ca-9884b8fa1e69
 Error Number:4104,State:1,Class:16
+2019-03-01 11:32:35,427 [53] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\MateriaController.cs][78][Editar]
+System.Data.SqlClient.SqlException (0x80131904): O identificador de várias partes "u.ID" não pôde ser associado.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.MateriaADO.Carregar(Int32 id) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\DAL\ADO\MateriaADO.cs:linha 61
+   em App.Lib.Service.MateriaService.Carregar(Int32 id) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\Service\MateriaService.cs:linha 25
+   em App.Admin.Controllers.MateriaController.Editar(Int32 id) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\MateriaController.cs:linha 74
+ClientConnectionId:dda5b3c2-89c3-419e-bcf6-5d9eedc861ed
+Error Number:4104,State:1,Class:16
+2019-03-01 11:34:23,346 [8] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\UsuarioController.cs][52][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'Usuario' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.UsuarioADO.Listar(Int32 skip, Int32 take, String palavraChave, Boolean somenteAtivos) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\DAL\ADO\UsuarioADO.cs:linha 232
+   em App.Lib.Service.UsuarioService.Listar(Int32 skip, Int32 take, String palavraChave, Boolean somenteAtivos) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\Service\UsuarioService.cs:linha 127
+   em App.Admin.Controllers.UsuarioController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\UsuarioController.cs:linha 45
+ClientConnectionId:4f2b32c3-834e-4d7a-aa28-bdcdd63b8816
+Error Number:208,State:1,Class:16
+2019-03-01 13:12:21,267 [8] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\MateriaController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '.'.
+Sintaxe incorreta próxima a 'tbl'.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.MateriaADO.Listar(Int32 skip, Int32 take, String palavraChave) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\DAL\ADO\MateriaADO.cs:linha 108
+   em App.Lib.Service.MateriaService.Listar(Int32 skip, Int32 take, String palavraChave) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\Service\MateriaService.cs:linha 47
+   em App.Admin.Controllers.MateriaController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\MateriaController.cs:linha 36
+ClientConnectionId:01cf7d33-713b-4d97-9faa-3cf7ce3fadca
+Error Number:102,State:1,Class:15
+2019-03-01 13:13:28,300 [6] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\MateriaController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '.'.
+Sintaxe incorreta próxima a 'tbl'.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.MateriaADO.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Lib.Service.MateriaService.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Admin.Controllers.MateriaController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\MateriaController.cs:linha 36
+ClientConnectionId:01cf7d33-713b-4d97-9faa-3cf7ce3fadca
+Error Number:102,State:1,Class:15
+2019-03-01 13:49:59,774 [80] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\MateriaController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '.'.
+Sintaxe incorreta próxima a 'tbl'.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.MateriaADO.Listar(Int32 skip, Int32 take, String palavraChave) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\DAL\ADO\MateriaADO.cs:linha 108
+   em App.Lib.Service.MateriaService.Listar(Int32 skip, Int32 take, String palavraChave) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\Service\MateriaService.cs:linha 47
+   em App.Admin.Controllers.MateriaController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\MateriaController.cs:linha 36
+ClientConnectionId:fa4bf7b7-9c22-4f52-b290-9216d568e2d7
+Error Number:102,State:1,Class:15
+2019-03-01 15:47:33,349 [25] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][99][Salvar]
+System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir o valor NULL na coluna 'ID', tabela 'rudinei.dbo.Carta'; a coluna não permite nulos. Falha em INSERT.
+A instrução foi finalizada.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 3397
+   em Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1346
+   em Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1221
+   em App.Lib.DAL.ADO.CartaADO.Inserir(Carta entidade) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\DAL\ADO\CartaADO.cs:linha 30
+   em App.Lib.Service.CartaService.Salvar(Carta entidade) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\Service\CartaService.cs:linha 36
+   em App.Admin.Controllers.FlashCardController.Salvar(Carta model) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 95
+ClientConnectionId:56b1bbe7-4138-4142-80ba-d19e1b616f01
+Error Number:515,State:2,Class:16
+2019-03-01 17:35:52,905 [38] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][100][Salvar]
+System.Data.SqlClient.SqlException (0x80131904): Dados de cadeia ou binários seriam truncados.
+A instrução foi finalizada.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 3397
+   em Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1346
+   em Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1221
+   em App.Lib.DAL.ADO.CartaADO.Inserir(Carta entidade) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\DAL\ADO\CartaADO.cs:linha 30
+   em App.Lib.Service.CartaService.Salvar(Carta entidade) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\Service\CartaService.cs:linha 36
+   em App.Admin.Controllers.FlashCardController.Salvar(Carta model) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 96
+ClientConnectionId:831ee42a-2aae-429a-ac11-858d62bc8e8d
+Error Number:8152,State:10,Class:16
+2019-03-01 17:39:41,482 [8] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][100][Salvar]
+System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir o valor NULL na coluna 'ID', tabela 'rudinei.dbo.Carta'; a coluna não permite nulos. Falha em INSERT.
+A instrução foi finalizada.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   em Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 3397
+   em Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1346
+   em Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1221
+   em App.Lib.DAL.ADO.CartaADO.Inserir(Carta entidade) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\DAL\ADO\CartaADO.cs:linha 30
+   em App.Lib.Service.CartaService.Salvar(Carta entidade) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\Service\CartaService.cs:linha 36
+   em App.Admin.Controllers.FlashCardController.Salvar(Carta model) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 96
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:515,State:2,Class:16
+2019-03-01 17:46:14,004 [9] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a 'LFET'.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.CartaADO.Listar(Int32 skip, Int32 take, String palavraChave) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\DAL\ADO\CartaADO.cs:linha 111
+   em App.Lib.Service.CartaService.Listar(Int32 skip, Int32 take, String palavraChave) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Lib\Service\CartaService.cs:linha 47
+   em App.Admin.Controllers.FlashCardController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 36
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:102,State:1,Class:15
+2019-03-01 17:47:21,845 [14] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a 'LFET'.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.CartaADO.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Lib.Service.CartaService.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Admin.Controllers.FlashCardController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 36
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:102,State:1,Class:15
+2019-03-01 17:47:33,046 [17] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): É necessário declarar a variável escalar "@palabrachave".
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.CartaADO.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Lib.Service.CartaService.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Admin.Controllers.FlashCardController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 36
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:137,State:2,Class:15
+2019-03-01 17:48:08,578 [9] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): É necessário declarar a variável escalar "@palabrachave".
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<QueryImpl>d__61`1.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1589
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1479
+   em App.Lib.DAL.ADO.CartaADO.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Lib.Service.CartaService.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Admin.Controllers.FlashCardController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 36
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:137,State:2,Class:15
+2019-03-01 17:48:20,359 [9] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '.'.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<MultiMapImpl>d__71`8.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1848
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.MultiMap[TFirst,TSecond,TThird,TFourth,TFifth,TSixth,TSeventh,TReturn](IDbConnection cnn, String sql, Delegate map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1829
+   em Dapper.SqlMapper.Query[TFirst,TSecond,TReturn](IDbConnection cnn, String sql, Func`3 map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1660
+   em App.Lib.DAL.ADO.CartaADO.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Lib.Service.CartaService.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Admin.Controllers.FlashCardController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 36
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:102,State:1,Class:15
+2019-03-01 17:48:57,376 [30] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '.'.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<MultiMapImpl>d__71`8.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1848
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.MultiMap[TFirst,TSecond,TThird,TFourth,TFifth,TSixth,TSeventh,TReturn](IDbConnection cnn, String sql, Delegate map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1829
+   em Dapper.SqlMapper.Query[TFirst,TSecond,TReturn](IDbConnection cnn, String sql, Func`3 map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1660
+   em App.Lib.DAL.ADO.CartaADO.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Lib.Service.CartaService.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Admin.Controllers.FlashCardController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 36
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:102,State:1,Class:15
+2019-03-01 17:50:10,704 [21] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'FROM'.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<MultiMapImpl>d__71`8.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1848
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.MultiMap[TFirst,TSecond,TThird,TFourth,TFifth,TSixth,TSeventh,TReturn](IDbConnection cnn, String sql, Delegate map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1829
+   em Dapper.SqlMapper.Query[TFirst,TSecond,TReturn](IDbConnection cnn, String sql, Func`3 map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1660
+   em App.Lib.DAL.ADO.CartaADO.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Lib.Service.CartaService.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Admin.Controllers.FlashCardController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 36
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:156,State:1,Class:15
+2019-03-01 17:50:17,148 [21] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'NOLOCLK' inválido.
+Parâmetros fornecidos para objeto 'Materia' que não é uma função. Se a intenção é usar parâmetros como dica de tabela, é necessário usar a palavra-chave WITH.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<MultiMapImpl>d__71`8.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1848
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.MultiMap[TFirst,TSecond,TThird,TFourth,TFifth,TSixth,TSeventh,TReturn](IDbConnection cnn, String sql, Delegate map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1829
+   em Dapper.SqlMapper.Query[TFirst,TSecond,TReturn](IDbConnection cnn, String sql, Func`3 map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1660
+   em App.Lib.DAL.ADO.CartaADO.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Lib.Service.CartaService.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Admin.Controllers.FlashCardController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 36
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:207,State:1,Class:16
+2019-03-01 17:50:56,747 [21] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'NOLOCLK' inválido.
+Parâmetros fornecidos para objeto 'Materia' que não é uma função. Se a intenção é usar parâmetros como dica de tabela, é necessário usar a palavra-chave WITH.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<MultiMapImpl>d__71`8.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1848
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.MultiMap[TFirst,TSecond,TThird,TFourth,TFifth,TSixth,TSeventh,TReturn](IDbConnection cnn, String sql, Delegate map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1829
+   em Dapper.SqlMapper.Query[TFirst,TSecond,TReturn](IDbConnection cnn, String sql, Func`3 map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1660
+   em App.Lib.DAL.ADO.CartaADO.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Lib.Service.CartaService.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Admin.Controllers.FlashCardController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 36
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:207,State:1,Class:16
+2019-03-01 17:51:30,762 [21] ERROR AppAdmin [C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs][42][Listar]
+System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Frente' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em Dapper.SqlMapper.<MultiMapImpl>d__71`8.MoveNext() na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1848
+   em System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   em System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   em Dapper.SqlMapper.MultiMap[TFirst,TSecond,TThird,TFourth,TFifth,TSixth,TSeventh,TReturn](IDbConnection cnn, String sql, Delegate map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1829
+   em Dapper.SqlMapper.Query[TFirst,TSecond,TReturn](IDbConnection cnn, String sql, Func`3 map, Object param, IDbTransaction transaction, Boolean buffered, String splitOn, Nullable`1 commandTimeout, Nullable`1 commandType) na D:\Dev\dapper-dot-net\Dapper NET40\SqlMapper.cs:linha 1660
+   em App.Lib.DAL.ADO.CartaADO.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Lib.Service.CartaService.Listar(Int32 skip, Int32 take, String palavraChave)
+   em App.Admin.Controllers.FlashCardController.Listar(jQueryDataTableParamModel param) na C:\Users\Laura\Desktop\gerenciador_estudos\desenvolvimento\App.Admin\Controllers\FlashCardController.cs:linha 36
+ClientConnectionId:ef124cd1-0b9c-46f8-874e-418a8bde03d7
+Error Number:207,State:1,Class:16

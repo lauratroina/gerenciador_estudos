@@ -52,7 +52,7 @@ namespace App.Lib.DAL.ADO
         public Materia Carregar(int id)
         {
             Materia entidade = null;
-            string SQL = @"SELECT * FROM Materia WHERE u.ID=@ID";
+            string SQL = @"SELECT * FROM Materia WHERE ID=@ID";
 
             using (DbConnection con = _db.CreateConnection())
             {
@@ -91,11 +91,11 @@ namespace App.Lib.DAL.ADO
             string SQLCount = @"SELECT COUNT(*) FROM Materia(NOLOCK) WHERE Nome LIKE @palavraChave";
 
             string SQL = @"
-            SELECT tbl.ID, tbl.Nome 
+            SELECT tbl.ID, tbl.CorFundo, tbl.CorBorda, tbl.CorTexto, tbl.Nome 
               FROM (SELECT ROW_NUMBER() OVER(ORDER BY m.ID) AS NUMBER,
-                           m.ID, m.Nome FROM Materia (NOLOCK)  m
+                           m.ID, m.Nome, m.CorFundo, m.CorBorda, m.CorTexto FROM Materia (NOLOCK)  m
                 WHERE m.Nome like @palavraChave) tbl
-            WHERE NUMBER BETWEEN @Skip AND (@Skip + @Take)
+            WHERE NUMBER BETWEEN @Skip AND (@Skip+1 + @Take)
             ORDER BY tbl.Nome";
 
 
@@ -120,7 +120,7 @@ namespace App.Lib.DAL.ADO
         public void Deletar(int id)
         {
             string sql = @"DELETE FROM Materia WHERE ID = @ID";
-            string sql2 = @"DELETE FROM Carta WHERE MateriaID = @ID";
+            string sql2 = @"DELETE FROM FlashCard WHERE MateriaID = @ID";
 
             using (DbConnection con = _db.CreateConnection())
             {

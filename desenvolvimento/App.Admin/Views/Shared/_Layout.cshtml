@@ -64,7 +64,8 @@
                 <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
                     <div>
                         <ul class="nav navbar-nav">
-                            <li><a href="@Url.Action("Index", "Materia")"><i class="menu-icon fa fa-archive"></i> <span class="mm-text">&nbsp;&nbsp;Matérias</span></a></li>
+                            <li><a href="@Url.Action("Index", "Materia")"><i class="menu-icon fa fa-book"></i> <span class="mm-text">&nbsp;&nbsp;Matérias</span></a></li>
+                            <li><a href="@Url.Action("Index", "FlashCard")"><i class="menu-icon fa fa-edit"></i> <span class="mm-text">&nbsp;&nbsp;Flash Cards</span></a></li>
 
                         </ul>
                         <!-- / .navbar-nav -->
@@ -73,7 +74,7 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
                                         <i class="fa fa-user"></i>
-                                        <span>@(Session.GetModel<SessionModel>().Usuario.Nome)</span>
+                                        @*<span>@(Session.GetModel<SessionModel>().Usuario.Nome)</span>*@
                                     </a>
                                     @*<ul class="dropdown-menu">
                                         <li><a href="@Url.Action("AlterarSenha", "Conta")"><i class="dropdown-icon fa fa-key"></i>&nbsp;&nbsp;Alterar Senha</a></li>

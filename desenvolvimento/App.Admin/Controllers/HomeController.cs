@@ -16,7 +16,7 @@ namespace App.Admin.Controllers
         public ActionResult Index()
         {
 
-            return RedirectToAction("Index", "Usuario");
+            return RedirectToAction("Index", "Materia");
         }
     }
 }

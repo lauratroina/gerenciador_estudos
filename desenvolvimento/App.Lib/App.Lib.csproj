@@ -149,11 +149,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\ADO\ADOSuper.cs" />
+    <Compile Include="DAL\ADO\CartaADO.cs" />
     <Compile Include="DAL\ADO\MateriaADO.cs" />
     <Compile Include="DAL\ADO\UsuarioADO.cs" />
     <Compile Include="DAL\ADO\UsuarioPerfilADO.cs" />
     <Compile Include="DAL\IUsuarioDAL.cs" />
     <Compile Include="DAL\IUsuarioPerfilDAL.cs" />
+    <Compile Include="Entity\Carta.cs" />
     <Compile Include="Entity\Enumerator\Enumerador.cs" />
     <Compile Include="Entity\Materia.cs" />
     <Compile Include="Entity\Usuario.cs" />
@@ -165,6 +167,7 @@
     <Compile Include="Models\RetornoModel.cs" />
     <Compile Include="Models\UsuarioCadastroModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\CartaService.cs" />
     <Compile Include="Service\MateriaService.cs" />
     <Compile Include="Service\Robo.cs">
       <SubType>Code</SubType>
