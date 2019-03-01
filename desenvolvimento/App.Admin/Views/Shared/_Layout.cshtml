@@ -64,11 +64,8 @@
                 <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
                     <div>
                         <ul class="nav navbar-nav">
+                            <li><a href="@Url.Action("Index", "Materia")"><i class="menu-icon fa fa-archive"></i> <span class="mm-text">&nbsp;&nbsp;Matérias</span></a></li>
 
-                            @if (UsuarioService.TemPermissao(SessionModel.Usuario, enumPerfilNome.master))
-                            {
-                                <li><a href="@Url.Action("Index", "Usuario")"><i class="menu-icon fa fa-user"></i> <span class="mm-text">&nbsp;&nbsp;Usuários</span></a></li>
-                            }
                         </ul>
                         <!-- / .navbar-nav -->
                         <div class="right clearfix">
@@ -78,7 +75,7 @@
                                         <i class="fa fa-user"></i>
                                         <span>@(Session.GetModel<SessionModel>().Usuario.Nome)</span>
                                     </a>
-                                    <ul class="dropdown-menu">
+                                    @*<ul class="dropdown-menu">
                                         <li><a href="@Url.Action("AlterarSenha", "Conta")"><i class="dropdown-icon fa fa-key"></i>&nbsp;&nbsp;Alterar Senha</a></li>
                                         <li class="divider"></li>
                                         <li><a href="@ConfiguracaoAppUtil.Get(enumConfiguracaoGeral.hostUrlSite)" target="_blank"><i class="dropdown-icon fa  fa-external-link"></i>&nbsp;&nbsp;Acessar o site</a></li>
@@ -89,7 +86,7 @@
                                             <li class="divider"></li>
                                         }
                                         <li><a href="@Url.Action("Sair", "Conta")"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Sair</a></li>
-                                    </ul>
+                                    </ul>*@
                                 </li>
                             </ul>
                             <!-- / .navbar-nav -->

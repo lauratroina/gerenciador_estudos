@@ -49,6 +49,9 @@ namespace App.Lib.Service
             return lista;
         }
 
-
+        public void Deletar(int id)
+        {
+            _dao.Deletar(id);
+        }
     }
 }

@@ -64,7 +64,7 @@ namespace App.Lib.DAL.ADO
             }
             return entidade;
         }
-        
+
         public IList<Materia> Listar()
         {
             IList<Materia> list = new List<Materia>();
@@ -90,24 +90,14 @@ namespace App.Lib.DAL.ADO
 
             string SQLCount = @"SELECT COUNT(*) FROM Materia(NOLOCK) WHERE Nome LIKE @palavraChave";
 
-            //            // SQL SERVER 2008
-            //            string SQL = @"
-            //SELECT tbl.ID, tbl.Nome, tbl.Login, tbl.Senha, tbl.UltimoAcesso, tbl.Inativo, tbl.DataCadastro, tbl.Email, tbl.UsuarioPerfilID, tbl.UsuarioID,
-            //       tbl.perfilID as ID, tbl.perfilNomeDB as NomeDB, tbl.perfilDescricao as Descricao 
-            //  FROM (SELECT ROW_NUMBER() OVER(ORDER BY u.ID) AS NUMBER,
-            //               u.ID, u.Nome, u.Login, u.Senha, u.UltimoAcesso, u.Inativo, u.DataCadastro, u.Email, u.UsuarioPerfilID, u.UsuarioID,
-            //               p.ID as perfilID, p.Nome as perfilNomeDB, p.Descricao as perfilDescricao
-            //          FROM Usuario (NOLOCK)  u
-            //    INNER JOIN UsuarioPerfil (NOLOCK) p ON u.UsuarioPerfilID = p.ID
-            //    WHERE u.nome like @palavraChave " + (somenteAtivos ? " AND Inativo = 0" : "") + @"
-            //) tbl
-            //WHERE NUMBER BETWEEN @Skip AND (@Skip + @Take)
-            //ORDER BY tbl.perfilNomeDB, tbl.Login";
+            string SQL = @"
+            SELECT tbl.ID, tbl.Nome 
+              FROM (SELECT ROW_NUMBER() OVER(ORDER BY m.ID) AS NUMBER,
+                           m.ID, m.Nome FROM Materia (NOLOCK)  m
+                WHERE m.Nome like @palavraChave) tbl
+            WHERE NUMBER BETWEEN @Skip AND (@Skip + @Take)
+            ORDER BY tbl.Nome";
 
-            string SQL = @"SELECT * FROM Materia
-                                    WHERE Nome like @palavraChave
-                                    ORDER Nome
-                                    DESC OFFSET @Skip ROWS FETCH NEXT @Take ROWS ONLY";
 
 
             using (DbConnection con = _db.CreateConnection())
@@ -115,7 +105,8 @@ namespace App.Lib.DAL.ADO
                 con.Open();
 
                 TotalRegistros = con.Query<int>(SQLCount, new { palavraChave = "%" + palavraChave + "%" }).FirstOrDefault();
-                list = con.Query<Materia>(SQL, new {
+                list = con.Query<Materia>(SQL, new
+                {
                     Skip = skip,
                     Take = take,
                     palavraChave = "%" + palavraChave + "%"
@@ -126,6 +117,21 @@ namespace App.Lib.DAL.ADO
             return list;
         }
 
+        public void Deletar(int id)
+        {
+            string sql = @"DELETE FROM Materia WHERE ID = @ID";
+            string sql2 = @"DELETE FROM Carta WHERE MateriaID = @ID";
+
+            using (DbConnection con = _db.CreateConnection())
+            {
+                con.Open();
+                var transaction = con.BeginTransaction();
+                con.Execute(sql2, new { ID = id }, transaction);
+                con.Execute(sql, new { ID = id }, transaction);
+                transaction.Commit();
+                con.Close();
+            }
+        }
 
     }
 }

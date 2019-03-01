@@ -85,21 +85,36 @@ namespace App.Lib.DAL.ADO
                       INNER JOIN UsuarioPerfil (NOLOCK) p ON u.UsuarioPerfilID = p.ID
                            WHERE u.ID=@ID";
 
-            using (DbConnection con = _db.CreateConnection())
+            //using (DbConnection con = _db.CreateConnection())
+            //{
+            //    con.Open();
+
+            //    entidade = con.Query<Usuario, UsuarioPerfil, Usuario>(SQL, (usuario, perfil) =>
+            //    {
+            //        usuario.Perfil = perfil;
+            //        return usuario;
+            //    }, new
+            //    {
+            //        ID = id
+            //    }).FirstOrDefault();
+
+            //    con.Close();
+            //}
+            entidade = new Usuario
             {
-                con.Open();
-
-                entidade = con.Query<Usuario, UsuarioPerfil, Usuario>(SQL, (usuario, perfil) =>
+                Ativo = true,
+                Email = "lombardi.rdn@gmail.com",
+                ID = 1,
+                Login = "rudi",
+                Perfil = new UsuarioPerfil
                 {
-                    usuario.Perfil = perfil;
-                    return usuario;
-                }, new
-                {
-                    ID = id
-                }).FirstOrDefault();
+                    ID = 1,
+                    Nome = Entity.Enumerator.enumPerfilNome.master,
+                    Descricao = "Master"
+                },
+                Nome = "Rudinei Lombardi"
+            };
 
-                con.Close();
-            }
             return entidade;
         }
 
