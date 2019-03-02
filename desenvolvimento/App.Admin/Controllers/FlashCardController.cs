@@ -171,6 +171,7 @@ namespace App.Admin.Controllers
             return View(model);
         }
 
+        [HttpPost]
         public ActionResult ListarParaEstudo(SorteioViewModel model)
         {
             IList<Carta> retorno;
