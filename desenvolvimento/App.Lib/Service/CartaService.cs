@@ -63,5 +63,10 @@ namespace App.Lib.Service
         {
             _dao.MudarStatus(id, status);
         }
+
+        public IList<Carta> Listar(IList<int> ids, bool favoritas)
+        {
+            return _dao.Listar(ids, favoritas);
+        }
     }
 }

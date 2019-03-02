@@ -152,9 +152,6 @@
     <Compile Include="DAL\ADO\CartaADO.cs" />
     <Compile Include="DAL\ADO\MateriaADO.cs" />
     <Compile Include="DAL\ADO\UsuarioADO.cs" />
-    <Compile Include="DAL\ADO\UsuarioPerfilADO.cs" />
-    <Compile Include="DAL\IUsuarioDAL.cs" />
-    <Compile Include="DAL\IUsuarioPerfilDAL.cs" />
     <Compile Include="Entity\Carta.cs" />
     <Compile Include="Entity\Enumerator\Enumerador.cs" />
     <Compile Include="Entity\Materia.cs" />
@@ -172,7 +169,6 @@
     <Compile Include="Service\Robo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Service\UsuarioPerfilService.cs" />
     <Compile Include="Service\UsuarioService.cs" />
     <Compile Include="Util\AreaRegistration\MultiPortaisAreaRegistrationAreaRegistration.cs" />
     <Compile Include="Util\ConfiguracaoAppUtil.cs" />

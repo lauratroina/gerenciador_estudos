@@ -26,6 +26,7 @@
 
 
     @Html.HiddenFor(t => t.ID)
+    @Html.HiddenFor(t => t.InserirProxima, new { @id="InserirProxima"})
 
     <div class="panel">
         <div class="panel-heading">
@@ -49,12 +50,12 @@
             </div>
             <div class="form-group">
                 <label>Frente</label>
-                @Html.TextAreaFor(t => t.TextoFrente, new { @class = "form-control summernote-example", @rows = "20"})
+                @Html.TextAreaFor(t => t.TextoFrente, new { @class = "form-control summernote-example", @rows = "20" })
             </div>
 
             <div class="form-group">
                 <label>Verso</label>
-                @Html.TextAreaFor(t => t.TextoVerso, new { @class = "form-control summernote-example", @rows = "20"})
+                @Html.TextAreaFor(t => t.TextoVerso, new { @class = "form-control summernote-example", @rows = "20" })
             </div>
 
 
@@ -64,7 +65,10 @@
             <div class="form-group">
                 <div class="pull-right">
 
-                    <button type="submit" class="btn-success btn btn-flat btn-labeled"><span class="btn-label icon fa fa-save"></span>Salvar</button>
+                    <button type="submit" class="btn-success btn btn-flat btn-labeled submit"><span class="btn-label icon fa fa-save"></span>Salvar</button>
+                    &nbsp;
+                    <button type="button" class="btn-success btn btn-flat btn-labeled InserirProxima"><span class="btn-label icon fa fa-save"></span>Inserir Próxima</button>
+
                 </div>
             </div>
         </div>
@@ -106,6 +110,13 @@
                 $panel.find('.panel-body > *').removeClass('no-border');
             }
         });
+
+        $(".InserirProxima").on("click", function () {
+            $("#InserirProxima").val(true);
+            $(".submit").click();
+        });
     });
+
+
 </script>
 <!-- / Javascript -->

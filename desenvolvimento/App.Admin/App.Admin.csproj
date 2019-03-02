@@ -178,6 +178,7 @@
     <Compile Include="Controllers\GerenciadorArquivoController.cs" />
     <Compile Include="Controllers\MateriaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Models\SorteioViewModel.cs" />
     <Compile Include="Models\InfoExportacaoModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1136,6 +1137,7 @@
     <Content Include="Views\Materia\Editar.cshtml" />
     <Content Include="Views\FlashCard\Index.cshtml" />
     <Content Include="Views\FlashCard\Editar.cshtml" />
+    <Content Include="Views\FlashCard\Sortear.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace App.Admin.Controllers
@@ -70,7 +71,7 @@ namespace App.Admin.Controllers
         }
 
 
-        public ActionResult Editar(Int32 id = 0)
+        public ActionResult Editar(Int32 id = 0, int materia=0)
         {
             Carta entidade = new Carta();
             entidade.Status = true;
@@ -82,6 +83,8 @@ namespace App.Admin.Controllers
                     entidade = new CartaService().Carregar(id);
                 }
                 entidade.Materias = new MateriaService().Listar();
+                if (materia != 0)
+                    entidade.MateriaID = materia;
             }
             catch (Exception ex)
             {
@@ -106,6 +109,9 @@ namespace App.Admin.Controllers
                 LogUtil.Error(ex);
                 return RedirectToAction("Index", "FlashCard", new { msg = "Ocorreu um erro ao salvar os dados", msgtipo = enumTipoMensagem.erro });
             }
+
+            if(model.InserirProxima)
+                return RedirectToAction("Editar", "FlashCard", new { materia=model.MateriaID, msg = "Dados Salvos com Sucesso", msgtipo = enumTipoMensagem.sucesso });
 
             return RedirectToAction("Index", "FlashCard", new { msg = "Dados Salvos com Sucesso", msgtipo = enumTipoMensagem.sucesso });
 
@@ -156,6 +162,28 @@ namespace App.Admin.Controllers
             }
             return Json(new { msg = "Status atualizado com sucesso", msgtipo = enumTipoMensagem.sucesso });
 
+        }
+
+        public ActionResult Sortear()
+        {
+            SorteioViewModel model = new SorteioViewModel();
+            model.Materias = new MateriaService().Listar();
+            return View(model);
+        }
+
+        public ActionResult ListarParaEstudo(SorteioViewModel model)
+        {
+            IList<Carta> retorno;
+            var rnd = new Random();
+            try
+            {
+                retorno = new CartaService().Listar(model.MateriasIDs, model.Favoritas);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { data = ex.Message, sucesso = false, JsonRequestBehavior.AllowGet });
+            }
+            return Json(new { data = retorno.OrderBy(item => rnd.Next()), sucesso = true, JsonRequestBehavior.AllowGet });
         }
     }
 }

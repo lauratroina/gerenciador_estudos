@@ -15,12 +15,12 @@ using App.Lib.Identity;
 using App.Lib.Models;
 using System.Linq;
 
-namespace App.Lib.Service 
-{ 
-    public class UsuarioService 
-    { 
+namespace App.Lib.Service
+{
+    public class UsuarioService
+    {
 
-		private Int32 _totalRegistros = 0;
+        private Int32 _totalRegistros = 0;
 
         public Int32 TotalRegistros
         {
@@ -28,17 +28,17 @@ namespace App.Lib.Service
             set { _totalRegistros = value; }
         }
 
-        private IUsuarioDAL dal = new UsuarioADO(); 
+        private UsuarioADO dal = new UsuarioADO();
 
-        public Usuario Carregar(int id) 
-        { 
-            return dal.Carregar(id);  
+        public Usuario Carregar(int id)
+        {
+            return dal.Carregar(id);
         }
 
         public Usuario Carregar(string login)
         {
             return dal.Carregar(login);
-        } 
+        }
 
         public ClaimsIdentity CriarIdentity(Usuario usuario)
         {
@@ -55,13 +55,12 @@ namespace App.Lib.Service
 
         public void Salvar(Usuario usuario)
         {
-            if(usuario.ID > 0)
+            if (usuario.ID > 0)
             {
                 dal.Atualizar(usuario);
             }
             else
             {
-                usuario.DataCadastro = DateTime.Now;
                 dal.Inserir(usuario);
             }
         }
@@ -77,14 +76,12 @@ namespace App.Lib.Service
             {
                 if (VerificarSenha(usuario.Senha, senha))
                 {
-                    if(usuario.Inativo)
+                    if (usuario.Inativo)
                     {
                         return new RetornoModel<Usuario, enumUsuarioException>() { Sucesso = false, Mensagem = "Usuário Inativo", Retorno = usuario, Tipo = enumUsuarioException.usuarioInativo };
                     }
                     else
                     {
-                        usuario.UltimoAcesso = DateTime.Now;
-                        //dal.Atualizar(usuario);
                         return new RetornoModel<Usuario, enumUsuarioException>() { Sucesso = true, Retorno = usuario, Mensagem = "OK", Tipo = enumUsuarioException.nenhum };
                     }
                 }
@@ -118,16 +115,10 @@ namespace App.Lib.Service
 
         public static bool VerificarSenha(string hash, string senha)
         {
-            return true;
-            //return (hash == CriptografarSenha(senha));
+            var senha2 = CriptografarSenha(senha);
+            return (hash == CriptografarSenha(senha));
         }
 
-        public IList<Usuario> Listar(Int32 skip, Int32 take, string palavraChave, bool somenteAtivos = true)
-        {
-            IList<Usuario> lista = dal.Listar(skip, take,palavraChave, somenteAtivos);
-            TotalRegistros = dal.TotalRegistros;
-            return lista;
-        }
 
         public static bool TemPermissao(Usuario usuario, params enumPerfilNome[] perfisNomes)
         {
@@ -139,5 +130,5 @@ namespace App.Lib.Service
                 return true;
             return (perfisNomes.Contains(usuario.Perfil.Nome));
         }
-    } 
-} 
+    }
+}

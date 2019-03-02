@@ -10,6 +10,7 @@
             <div class="row">
                 <hr class="visible-xs no-grid-gutter-h">
                 <div class="pull-right col-xs-12 col-sm-auto"><a href="@Url.Action("Editar", "Materia")" class="btn btn-primary btn-labeled btn-flat" style="width: 100%;"><span class="btn-label icon fa fa-plus"></span>Novo</a></div>
+      
             </div>
         </div>
     </div>
@@ -23,9 +24,7 @@
         <thead>
             <tr>
                 <th>Nome</th>
-                <th width="150">Cor da Borda</th>
-                <th width="150">Cor do Fundo</th>
-                <th width="150">Cor do Texto</th>
+                <th width="150">Cor</th>
                 <th width="150">Ação</th>
             </tr>
         </thead>
@@ -53,18 +52,6 @@
                         return `<div style="color:${data};background-color:${data}">${data}</div>`;
                     }
                 },
-                {
-                    "sName": "CorFundo",
-                    "bSortable": false,
-                    "mRender": function (data, type, full) {
-                        return `<div style="color:${data};background-color:${data}">${data}</div>`;
-                    } },
-                {
-                    "sName": "CorTexto",
-                    "bSortable": false,
-                    "mRender": function (data, type, full) {
-                        return `<div style="color:${data};background-color:${data}">${data}</div>`;
-                    }},
                 {
                     "sName": "Editar",
                     "bSearchable": false,

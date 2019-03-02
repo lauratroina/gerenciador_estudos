@@ -30,7 +30,6 @@ namespace App.Lib.Entity
             get { return !Inativo; }
             set { Inativo = !value; }
         }
-
-        public
+        
     }
 }

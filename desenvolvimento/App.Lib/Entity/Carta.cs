@@ -21,9 +21,10 @@ namespace App.Lib.Entity
         {
             get
             {
-                return Materias.Select(x => new SelectListItem { Text = x.Nome, Value = x.ID.ToString(), Selected = MateriaID == x.ID }).ToList();
+                return Materias != null? Materias.Select(x => new SelectListItem { Text = x.Nome, Value = x.ID.ToString(), Selected = MateriaID == x.ID }).ToList():null;
             }
         }
+        public bool InserirProxima { get; set; }
     }
 }
 

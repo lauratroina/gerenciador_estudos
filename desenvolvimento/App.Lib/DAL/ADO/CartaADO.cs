@@ -159,5 +159,23 @@ namespace App.Lib.DAL.ADO
                 con.Close();
             }
         }
+
+        public IList<Carta> Listar(IList<int> ids, bool favoritas)
+        {
+            IList<Carta> retorno = null;
+            string sql = @"SELECT * FROM Carta c (nolock) LEFT JOIN Materia m ON c.MateriaID=m.ID WHERE c.Status = 'true' AND m.ID in @lista";
+            sql = favoritas ? string.Format("{0} AND c.Favorita = 'true'", sql): sql;
+            using (DbConnection con = _db.CreateConnection())
+            {
+                con.Open();
+                retorno = con.Query<Carta, Materia, Carta>(sql, (carta, materia) => 
+                {
+                    carta.Materia = materia;
+                    return carta;
+                }, new { lista = ids} ).ToList();
+                con.Close();
+            }
+            return retorno;
+        }
     }
 }
