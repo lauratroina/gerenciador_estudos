@@ -160,22 +160,70 @@ namespace App.Lib.DAL.ADO
             }
         }
 
-        public IList<Carta> Listar(IList<int> ids, bool favoritas)
+        public Guid GerarSorteio(IList<int> ids, bool favoritas)
         {
+            Random random = new Random();
             IList<Carta> retorno = null;
-            string sql = @"SELECT * FROM Carta c (nolock) LEFT JOIN Materia m ON c.MateriaID=m.ID WHERE c.Status = 'true' AND m.ID in @lista";
+            string sql = @"SELECT c.ID FROM Carta c (nolock) LEFT JOIN Materia m ON c.MateriaID=m.ID WHERE c.Status = 'true' AND m.ID in @lista";
             sql = favoritas ? string.Format("{0} AND c.Favorita = 'true'", sql) : sql;
+            Guid identificador = Guid.NewGuid();
+            string sql2 = @"INSERT INTO Sorteio (CartaID, IdentificadorSorteio, Vista) VALUES (@CartaID, @IdentificadorSorteio, @Vista)";
             using (DbConnection con = _db.CreateConnection())
             {
                 con.Open();
-                retorno = con.Query<Carta, Materia, Carta>(sql, (carta, materia) =>
+                var transaction = con.BeginTransaction();
+                var cartas = con.Query<int>(sql, new { lista = ids }, transaction).ToList();
+                foreach (var c in cartas.OrderBy(i => random.Next()))
                 {
-                    carta.Materia = materia;
-                    return carta;
-                }, new { lista = ids }).ToList();
+                    con.Execute(sql2, new { CartaID = c, IdentificadorSorteio = identificador, Vista = false }, transaction);
+                }
+                transaction.Commit();
+                con.Close();
+            }
+            return identificador;
+        }
+        
+        public Sorteio Carregar(Guid identificador)
+        {
+            Sorteio retorno = new Sorteio();
+            string sql = @"SELECT top 1 * FROM Sorteio s 
+                            LEFT JOIN Carta c ON c.ID = s.CartaID 
+                            LEFT JOIN Materia m ON m.ID = c.MateriaID
+                            WHERE s.IdentificadorSorteio = @identificador AND s.Vista = 0";
+
+            using (var con = _db.CreateConnection())
+            {
+                con.Open();
+                retorno = con.Query<Sorteio, Carta, Materia, Sorteio>(sql, (sorteio, carta, materia) =>
+                {
+                    if (carta != null)
+                        carta.Materia = materia;
+                    sorteio.Carta = carta;
+                    return sorteio;
+                }, new { identificador = identificador }).FirstOrDefault();
+                if (retorno != null)
+                {
+                    con.Execute("UPDATE Sorteio SET Vista = 1 WHERE ID = @ID", new { ID = retorno.ID });
+                }
+                else
+                {
+                    con.Execute("UPDATE Sorteio SET Vista = 0 WHERE IdentificadorSorteio = @id", new { id = identificador });  
+                }
                 con.Close();
             }
             return retorno;
+        }
+
+        public void ApagaSorteio(int id)
+        {
+            string sql = @"DELETE FROM Sorteio WHERE ID = @ID";
+            using(var con = _db.CreateConnection())
+            {
+                con.Open();
+                con.Execute(sql, new { ID = id });
+                con.Close();
+ 
+            }
         }
     }
 }

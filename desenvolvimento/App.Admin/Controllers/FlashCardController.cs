@@ -71,7 +71,7 @@ namespace App.Admin.Controllers
         }
 
 
-        public ActionResult Editar(Int32 id = 0, int materia=0)
+        public ActionResult Editar(Int32 id = 0, int materia = 0)
         {
             Carta entidade = new Carta();
             entidade.Status = true;
@@ -110,8 +110,8 @@ namespace App.Admin.Controllers
                 return RedirectToAction("Index", "FlashCard", new { msg = "Ocorreu um erro ao salvar os dados", msgtipo = enumTipoMensagem.erro });
             }
 
-            if(model.InserirProxima)
-                return RedirectToAction("Editar", "FlashCard", new { materia=model.MateriaID, msg = "Dados Salvos com Sucesso", msgtipo = enumTipoMensagem.sucesso });
+            if (model.InserirProxima)
+                return RedirectToAction("Editar", "FlashCard", new { materia = model.MateriaID, msg = "Dados Salvos com Sucesso", msgtipo = enumTipoMensagem.sucesso });
 
             return RedirectToAction("Index", "FlashCard", new { msg = "Dados Salvos com Sucesso", msgtipo = enumTipoMensagem.sucesso });
 
@@ -167,13 +167,55 @@ namespace App.Admin.Controllers
         public ActionResult Filtrar()
         {
             SorteioViewModel model = new SorteioViewModel();
-            model.Materias = new MateriaService().Listar();
+            try
+            {
+                model.Materias = new MateriaService().Listar();
+            }
+            catch (Exception ex)
+            {
+
+            }
             return View(model);
         }
 
-        public ActionResult Detalhe(int id)
+        [HttpPost]
+        public ActionResult Sortear(SorteioViewModel model)
         {
-            return View(new CartaService().Carregar(id));
+            Guid Identificador = new Guid();
+            try
+            {
+                CartaService service = new CartaService();
+                Identificador = service.GerarSorteio(model.MateriasIDs, model.Favoritas);
+            }
+            catch (Exception ex)
+            {
+            }
+            return RedirectToAction("Detalhe", "FlashCard", new { id = Identificador });
+        }
+        
+        public ActionResult Detalhe(Guid id, bool r = false, int idc=0)
+        {
+            CartaService service = new CartaService();
+            Sorteio retorno = new Sorteio();
+            try
+            {
+                if(!r && idc > 0)
+                {
+                    service.ApagaSorteio(idc);
+                }
+                retorno = service.Carregar(id);
+                if (retorno == null)
+                {
+                    retorno = service.Carregar(id);
+                    if(retorno == null)
+                    {
+                        return RedirectToAction("Index", "FlashCard", new { msg = "Você terminou todas as cartas", msgtipo = enumTipoMensagem.sucesso });
+                    }
+                }
+            }
+            catch (Exception ex)
+            { }
+            return View(retorno);
         }
     }
 }

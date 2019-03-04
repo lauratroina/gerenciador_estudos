@@ -155,6 +155,7 @@
     <Compile Include="Entity\Carta.cs" />
     <Compile Include="Entity\Enumerator\Enumerador.cs" />
     <Compile Include="Entity\Materia.cs" />
+    <Compile Include="Entity\Sorteio.cs" />
     <Compile Include="Entity\Usuario.cs" />
     <Compile Include="Entity\UsuarioPerfil.cs" />
     <Compile Include="Enumerator\Enumerador.cs" />

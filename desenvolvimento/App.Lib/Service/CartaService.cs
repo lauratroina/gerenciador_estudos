@@ -64,9 +64,21 @@ namespace App.Lib.Service
             _dao.MudarStatus(id, status);
         }
 
-        public IList<Carta> Listar(IList<int> ids, bool favoritas)
+        public Guid GerarSorteio(IList<int> ids, bool favoritas)
         {
-            return _dao.Listar(ids, favoritas);
+            return _dao.GerarSorteio(ids, favoritas);
         }
+
+        public Sorteio Carregar(Guid Identificador)
+        {
+            return _dao.Carregar(Identificador);
+        }
+
+        public void ApagaSorteio(int id)
+        {
+            _dao.ApagaSorteio(id);
+        }
+
+
     }
 }

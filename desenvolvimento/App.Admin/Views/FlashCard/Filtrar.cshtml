@@ -34,14 +34,13 @@
 
                 <div class="form-group col-md-3">
                     <label>Somente favorita?</label>
-                    @Html.CheckBoxFor(t => t.Favoritas, new { @class = "switcher-example-default" })
+                    <input type="checkbox" data-inativo="True" checked="checked" class="switcher-example-default repetir" />
                 </div>
 
 
                 <div class="form-group col-md-3">
                     <div class="pull-right">
-                        <button type="submit" class="btn-success btn btn-flat btn-labeled"><span class="btn-label icon fa fa-play"></span>Iniciar</button>
-
+                        <button type="submit" class="btn-primary btn btn-flat btn-labeled"><span class="btn-label icon fa fa-play"></span>Iniciar</button>
                     </div>
                 </div>
             </div>
@@ -49,3 +48,17 @@
     </div>
 
 }
+
+<script>
+    init.push(function () {
+        $(".select").select2();
+        $('.repetir').on("click", function () {
+            if ($(this).data("inativo") == "False") {
+                $(this).data("inativo", "True");
+            }
+            else {
+                $(this).data("inativo", "False");
+            }
+        });
+    });
+</script>
