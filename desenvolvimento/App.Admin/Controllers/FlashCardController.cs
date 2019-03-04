@@ -164,27 +164,16 @@ namespace App.Admin.Controllers
 
         }
 
-        public ActionResult Sortear()
+        public ActionResult Filtrar()
         {
             SorteioViewModel model = new SorteioViewModel();
             model.Materias = new MateriaService().Listar();
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult ListarParaEstudo(SorteioViewModel model)
+        public ActionResult Detalhe(int id)
         {
-            IList<Carta> retorno;
-            var rnd = new Random();
-            try
-            {
-                retorno = new CartaService().Listar(model.MateriasIDs, model.Favoritas);
-            }
-            catch (Exception ex)
-            {
-                return Json(new { data = ex.Message, sucesso = false, JsonRequestBehavior.AllowGet });
-            }
-            return Json(new { data = retorno.OrderBy(item => rnd.Next()), sucesso = true, JsonRequestBehavior.AllowGet });
+            return View(new CartaService().Carregar(id));
         }
     }
 }

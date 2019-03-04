@@ -45,7 +45,7 @@ namespace App.Admin.Controllers
             List<string[]> listaDados = new List<string[]>();
             foreach (var item in result)
             {
-                listaDados.Add(new string[] { item.Nome, item.CorBorda, item.ID.ToString() });
+                listaDados.Add(new string[] { item.Nome, item.CorBorda, item.CorFundo, item.ID.ToString() });
             }
 
             //Monta Json de Retorno

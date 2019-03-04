@@ -19,6 +19,7 @@ namespace App.Admin.Models
                 return Materias.Select(x => new SelectListItem { Text = x.Nome, Value = x.ID.ToString() }).ToList();
             }
         }
+        public Carta carta;
 
     }
 }

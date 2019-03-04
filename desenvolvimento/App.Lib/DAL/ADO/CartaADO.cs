@@ -53,13 +53,13 @@ namespace App.Lib.DAL.ADO
         public Carta Carregar(int id)
         {
             Carta entidade = null;
-            string SQL = @"SELECT * FROM Carta WHERE ID=@ID";
+            string SQL = @"SELECT * FROM Carta c LEFT JOIN Materia m ON m.ID = c.MateriaID WHERE c.ID=@ID ";
 
             using (DbConnection con = _db.CreateConnection())
             {
                 con.Open();
 
-                entidade = con.Query<Carta>(SQL, new { ID = id }).FirstOrDefault();
+                entidade = con.Query<Carta, Materia, Carta>(SQL, (carta, materia) => { carta.Materia = materia; return carta; }, new { ID = id }).FirstOrDefault();
 
                 con.Close();
             }
@@ -164,15 +164,15 @@ namespace App.Lib.DAL.ADO
         {
             IList<Carta> retorno = null;
             string sql = @"SELECT * FROM Carta c (nolock) LEFT JOIN Materia m ON c.MateriaID=m.ID WHERE c.Status = 'true' AND m.ID in @lista";
-            sql = favoritas ? string.Format("{0} AND c.Favorita = 'true'", sql): sql;
+            sql = favoritas ? string.Format("{0} AND c.Favorita = 'true'", sql) : sql;
             using (DbConnection con = _db.CreateConnection())
             {
                 con.Open();
-                retorno = con.Query<Carta, Materia, Carta>(sql, (carta, materia) => 
+                retorno = con.Query<Carta, Materia, Carta>(sql, (carta, materia) =>
                 {
                     carta.Materia = materia;
                     return carta;
-                }, new { lista = ids} ).ToList();
+                }, new { lista = ids }).ToList();
                 con.Close();
             }
             return retorno;

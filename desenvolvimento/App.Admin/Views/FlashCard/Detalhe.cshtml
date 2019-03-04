@@ -1,0 +1,38 @@
+﻿@model Carta
+@{
+    string corTexto = Model.Materia.CorBorda == "#ffffff" ? (Model.Materia.CorFundo == "#ffffff" ? "#000000" : Model.Materia.CorFundo) : Model.Materia.CorBorda;
+}
+<div>
+
+    <div class="col-md-12" style="margin-top:30px">
+        <div class="row">
+            <div class="form-group">
+                <label>Favorita</label>
+                @Html.CheckBoxFor(t => t.Favorita, new { @class = "switcher-example-default" })
+            <div class="form-group">
+                <label>Ativa</label>
+                @Html.CheckBoxFor(t => t.Status, new { @class = "switcher-example-default" })
+            </div>
+                <button type="button" class="btn-secondary btn btn-flat btn-labeled"><span class="btn-label icon fa fa-arrow-left"></span>Anterior</button>
+                <button type="button" class="btn-secondary btn btn-flat btn-labeled ver"><span class="btn-label icon fa fa-search"></span>Ver</button>
+                <button type="button" class="btn-secondary btn btn-flat btn-labeled">Próxima<span class="btn-label icon fa fa-arrow-right"></span></button>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <span style="margin-top:10px;font-size:medium;text-align:center;color:@(corTexto);"><h2>@Model.Materia.Nome</h2></span>
+</div>
+<div class="col-md-12 frente" style="text-align:center;margin-top:30px;border-style:solid;border-color:@Model.Materia.CorBorda;background-color:@Model.Materia.CorFundo">
+    @Html.Raw(Model.TextoFrente)
+</div>
+<div class="col-md-12 verso hidden" style="text-align:center;margin-top:30px;border-style:solid;border-color:@Model.Materia.CorBorda;background-color:@Model.Materia.CorFundo">
+    @Html.Raw(Model.TextoVerso)
+</div>
+
+
+<script>
+    $(".ver").on("click", function(){
+        $(".frente").toggleClass("hidden");
+        $(".verso").toggleClass("hidden");
+    });
+</script>

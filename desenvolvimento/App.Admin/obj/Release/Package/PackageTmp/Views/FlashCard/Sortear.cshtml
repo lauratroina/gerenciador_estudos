@@ -47,6 +47,7 @@
             </div>
         </div>
     </div>
+    @Html.Partial("_Carta", Model.carta)
 }
 <script>
 
@@ -57,7 +58,7 @@
                 url: "@Url.Action("ListarParaEstudo", "FlashCard")",
                 data: $("#frmCadastro").serialize(),
                 success: function (data) {
-                    
+                    console.log(data);
                 }
             });
         });

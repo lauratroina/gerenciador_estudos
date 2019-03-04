@@ -1,0 +1,24 @@
+﻿@model Carta
+
+<div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4 pull-left">
+                <button type="button" style="float:right" class="btn-secondary btn btn-flat btn-labeled"><span class="btn-label icon fa fa-arrow-left"></span>Anterior</button>
+            </div>
+            <div class="col-md-4">
+                <p style="font-size:medium;text-align:center;color:@Model.Materia.CorBorda;">@Model.Materia.Nome</p>
+            </div>
+            <div class="col-md-4 pull-left">
+                <button type="button" class="btn-secondary btn btn-flat btn-labeled"><span class="btn-label icon fa fa-arrow-right"></span>Próxima</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-12" >
+        <div class="row">
+            <div class="col-md-6" style="margin-top:40px;background-color:@Model.Materia.CorBorda">@Html.Raw(Model.TextoFrente)</div>
+            <div class="col-md-6" style="margin-top:40px;background-color:@Model.Materia.CorBorda">@Html.Raw(Model.TextoVerso)</div>
+        </div>
+    </div>
+</div>

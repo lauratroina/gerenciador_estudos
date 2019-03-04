@@ -30,7 +30,7 @@ var loadConfigFile = function (type) {
 	type = (typeof type === "undefined") ? "user" : type;
 	
 	if(type == 'user') {
-		var url = './scripts/filemanager.config.js';
+		//var url = './scripts/filemanager.config.js';
 	} else {
 		var url = './scripts/filemanager.config.js.default';
 	}
