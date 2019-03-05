@@ -17,19 +17,30 @@ namespace App.Lib.Entity
         {
             get
             {
+                if (Login == "rudi")
+                {
+                    return new UsuarioPerfil
+                    {
+                        ID = 1,
+                        Nome = Entity.Enumerator.enumPerfilNome.master,
+                        Descricao = "Master"
+                    };
+                }
+
                 return new UsuarioPerfil
                 {
-                    ID = 1,
-                    Nome = Entity.Enumerator.enumPerfilNome.master,
-                    Descricao = "Master"
+                    ID = 2,
+                    Nome = Entity.Enumerator.enumPerfilNome.convidado,
+                    Descricao = "Convidado"
                 };
             }
+
         }
         public bool Ativo
         {
             get { return !Inativo; }
             set { Inativo = !value; }
         }
-        
+
     }
 }

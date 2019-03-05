@@ -1,6 +1,7 @@
 ﻿using App.Admin.Enumerator;
 using App.Admin.Models;
 using App.Lib.Entity;
+using App.Lib.Entity.Enumerator;
 using App.Lib.Service;
 using App.Lib.Util;
 using System;
@@ -45,7 +46,7 @@ namespace App.Admin.Controllers
             List<string[]> listaDados = new List<string[]>();
             foreach (var item in result)
             {
-                listaDados.Add(new string[] { item.Nome, item.CorBorda, item.CorFundo, item.ID.ToString() });
+                listaDados.Add(new string[] { item.Nome, string.IsNullOrEmpty(item.CorBorda)?"":item.CorBorda, string.IsNullOrEmpty(item.CorFundo)?"":item.CorFundo, item.ID.ToString() });
             }
 
             //Monta Json de Retorno
@@ -63,7 +64,7 @@ namespace App.Admin.Controllers
 
         }
 
-
+        [AppAdminAuthorize(enumPerfilNome.master)]
         public ActionResult Editar(Int32 id = 0)
         {
             Materia materia = new Materia();
@@ -85,6 +86,8 @@ namespace App.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
+        [AppAdminAuthorize(enumPerfilNome.master)]
+
         public ActionResult Salvar(Materia model)
         {
             try
@@ -102,7 +105,7 @@ namespace App.Admin.Controllers
 
         }
 
-
+        [AppAdminAuthorize(enumPerfilNome.master)]
         public ActionResult Deletar(int id)
         {
             try

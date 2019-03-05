@@ -34,7 +34,7 @@
 
                 <div class="form-group col-md-3">
                     <label>Somente favorita?</label>
-                    <input type="checkbox" data-inativo="True" checked="checked" class="switcher-example-default repetir" />
+                    @Html.CheckBoxFor(t => t.Favoritas, new { @class = "switcher-example-default" })
                 </div>
 
 
@@ -52,13 +52,6 @@
 <script>
     init.push(function () {
         $(".select").select2();
-        $('.repetir').on("click", function () {
-            if ($(this).data("inativo") == "False") {
-                $(this).data("inativo", "True");
-            }
-            else {
-                $(this).data("inativo", "False");
-            }
-        });
+       
     });
 </script>

@@ -10,7 +10,7 @@ namespace App.Admin.Models
     public class SorteioViewModel
     {
         public IList<int> MateriasIDs { get; set; }
-        public bool Favoritas;
+        public bool Favoritas { get; set; }
         public IList<Materia> Materias { get; set; }
         public IList<SelectListItem> MateriasAsSelectList
         {

@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Flash Cards";
-    var subtitulo = "Sortear";
+    var subtitulo = "Filtrar";
 
 }
 
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-@using (Html.BeginForm("ListarParaEstudo", "FlashCard", FormMethod.Post, new { @name = "frmCadastro", id = "frmCadastro", autocomplete = "off" }))
+@using (Html.BeginForm("Sortear", "FlashCard", FormMethod.Post, new { @name = "frmCadastro", id = "frmCadastro", autocomplete = "off" }))
 {
 
 
@@ -40,29 +40,18 @@
 
                 <div class="form-group col-md-3">
                     <div class="pull-right">
-                        <button type="button" class="btn-success btn btn-flat btn-labeled iniciar"><span class="btn-label icon fa fa-play"></span>Iniciar</button>
-
+                        <button type="submit" class="btn-primary btn btn-flat btn-labeled"><span class="btn-label icon fa fa-play"></span>Iniciar</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @Html.Partial("_Carta", Model.carta)
-}
-<script>
 
+}
+
+<script>
     init.push(function () {
-        $(".iniciar").on("click", function () {
-            $.ajax({
-                type: "POST",
-                url: "@Url.Action("ListarParaEstudo", "FlashCard")",
-                data: $("#frmCadastro").serialize(),
-                success: function (data) {
-                    console.log(data);
-                }
-            });
-        });
         $(".select").select2();
+       
     });
 </script>
-<!-- / Javascript -->

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using App.Admin.Enumerator;
+using App.Admin.Models;
 using App.Lib.Entity.Enumerator;
 using App.Lib.Service;
 
@@ -15,7 +16,6 @@ namespace App.Admin.Controllers
     {
         public ActionResult Index()
         {
-
             return RedirectToAction("Index", "Materia");
         }
     }

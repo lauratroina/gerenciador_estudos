@@ -13,10 +13,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2019 10:44:36</publishTime>
     </File>
     <File Include="bin/2.dll">
-      <publishTime>03/03/2019 18:46:36</publishTime>
+      <publishTime>03/04/2019 17:18:47</publishTime>
     </File>
     <File Include="bin/2.pdb">
-      <publishTime>03/03/2019 18:46:36</publishTime>
+      <publishTime>03/04/2019 17:18:47</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -25,13 +25,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/App.Lib.dll">
-      <publishTime>03/03/2019 18:40:20</publishTime>
+      <publishTime>03/04/2019 17:18:46</publishTime>
     </File>
     <File Include="bin/App.Lib.dll.config">
       <publishTime>02/25/2019 10:44:41</publishTime>
     </File>
     <File Include="bin/App.Lib.pdb">
-      <publishTime>03/03/2019 18:40:20</publishTime>
+      <publishTime>03/04/2019 17:18:46</publishTime>
     </File>
     <File Include="bin/Dapper.dll">
       <publishTime>05/06/2015 13:05:20</publishTime>
@@ -585,11 +585,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/_Admin.js">
       <publishTime>02/25/2019 10:44:39</publishTime>
     </File>
+    <File Include="Views/Conta/AlterarSenha.cshtml">
+      <publishTime>02/25/2019 10:44:40</publishTime>
+    </File>
+    <File Include="Views/Conta/Index.cshtml">
+      <publishTime>02/25/2019 10:44:40</publishTime>
+    </File>
+    <File Include="Views/Conta/SemPermissao.cshtml">
+      <publishTime>02/25/2019 10:44:40</publishTime>
+    </File>
+    <File Include="Views/FlashCard/Detalhe.cshtml">
+      <publishTime>03/04/2019 16:55:44</publishTime>
+    </File>
     <File Include="Views/FlashCard/Editar.cshtml">
       <publishTime>03/01/2019 23:30:41</publishTime>
     </File>
+    <File Include="Views/FlashCard/Filtrar.cshtml">
+      <publishTime>03/04/2019 17:09:56</publishTime>
+    </File>
     <File Include="Views/FlashCard/Index.cshtml">
-      <publishTime>03/01/2019 23:40:48</publishTime>
+      <publishTime>03/04/2019 00:51:40</publishTime>
     </File>
     <File Include="Views/FlashCard/Sortear.cshtml">
       <publishTime>03/03/2019 15:26:23</publishTime>
@@ -601,10 +616,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/25/2019 10:44:40</publishTime>
     </File>
     <File Include="Views/Materia/Editar.cshtml">
-      <publishTime>03/01/2019 23:18:10</publishTime>
+      <publishTime>03/03/2019 23:39:02</publishTime>
     </File>
     <File Include="Views/Materia/Index.cshtml">
-      <publishTime>03/01/2019 23:39:17</publishTime>
+      <publishTime>03/03/2019 23:37:44</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>02/25/2019 10:44:40</publishTime>

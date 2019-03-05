@@ -1,6 +1,7 @@
 ﻿using App.Admin.Enumerator;
 using App.Admin.Models;
 using App.Lib.Entity;
+using App.Lib.Entity.Enumerator;
 using App.Lib.Service;
 using App.Lib.Util;
 using System;
@@ -14,6 +15,7 @@ namespace App.Admin.Controllers
 {
     public class FlashCardController : MasterController
     {
+        
         public ActionResult Index()
         {
             return View();
@@ -70,7 +72,7 @@ namespace App.Admin.Controllers
 
         }
 
-
+        [AppAdminAuthorize(enumPerfilNome.master)]
         public ActionResult Editar(Int32 id = 0, int materia = 0)
         {
             Carta entidade = new Carta();
@@ -97,6 +99,7 @@ namespace App.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
+        [AppAdminAuthorize(enumPerfilNome.master)]
         public ActionResult Salvar(Carta model)
         {
             try
@@ -118,6 +121,7 @@ namespace App.Admin.Controllers
         }
 
 
+        [AppAdminAuthorize(enumPerfilNome.master)]
         public ActionResult Deletar(int id)
         {
             try
@@ -135,6 +139,8 @@ namespace App.Admin.Controllers
 
         }
 
+        [AppAdminAuthorize(enumPerfilNome.master)]
+
         public ActionResult Favoritar(int id, bool favorito)
         {
             try
@@ -149,6 +155,7 @@ namespace App.Admin.Controllers
 
         }
 
+        [AppAdminAuthorize(enumPerfilNome.master)]
         public ActionResult MudarStatus(int id, bool status)
         {
             try
@@ -209,7 +216,7 @@ namespace App.Admin.Controllers
                     retorno = service.Carregar(id);
                     if(retorno == null)
                     {
-                        return RedirectToAction("Index", "FlashCard", new { msg = "Você terminou todas as cartas", msgtipo = enumTipoMensagem.sucesso });
+                        return RedirectToAction("Index", "FlashCard", new { msg = "Não há mais cartas", msgtipo = enumTipoMensagem.sucesso });
                     }
                 }
             }

@@ -5,7 +5,8 @@ namespace App.Lib.Entity.Enumerator
     public enum enumPerfilNome
     {
         todos,
-        master
+        master,
+        convidado
     }
     
 }

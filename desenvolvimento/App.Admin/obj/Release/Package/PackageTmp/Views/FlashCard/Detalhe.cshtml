@@ -24,20 +24,20 @@
             <div class="form-group col-md-4" style="color:@(corTexto);">
                 <b>[@Model.Carta.ID] - @Model.Carta.Materia.Nome.ToUpper()</b>
             </div>
-            <div class="form-group col-sm-2 f">
+            <div class="form-group col-md-2">
                 <label>Favorita</label>
                 <input type="checkbox" data-id="@Model.Carta.ID" data-inativo="@Model.Carta.Favorita.ToString()" @(Model.Carta.Favorita ? "checked='checked'" : "") class="switcher-example-default favoritar" />
             </div>
-            <div class="form-group  col-sm-2 a">
+            <div class="form-group  col-md-2">
                 <label>Ativa</label>
                 <input type="checkbox" data-id="@Model.Carta.ID" data-inativo="@Model.Carta.Status.ToString()" @(Model.Carta.Status ? "checked='checked'" : "") class="switcher-example-default inativar" />
             </div>
-            <div class="form-group  col-sm-2 r">
+            <div class="form-group  col-md-2">
                 <label>Repetir</label>
                 <input type="checkbox" data-inativo="False" class="switcher-example-default repetir" />
 
             </div>
-            <div class="form-group  col-sm-2">
+            <div class="form-group  col-md-2">
                 <div class="pull-right">
                     <button type="button" class="btn-secondary btn btn-flat btn-labeled ver"><span class="btn-label icon fa fa-search"></span>Ver</button>
                 </div>
@@ -108,26 +108,8 @@
                   else {
                       $(this).data("inativo", "False");
                   }
-                 });
-
-          $(document).keypress(function (e) {
-                  if (e.wich == 32 || e.keyCode == 32) {
-                      $(".proximo").click();
-                  }
-                  if (e.wich == 102 || e.keyCode == 102) {                      
-                      $(".f .switcher-toggler").click()
-                  }
-                  if (e.wich == 97 || e.keyCode == 97) {
-                      $(".a .switcher-toggler").click()
-                  }
-                  if (e.wich == 114 || e.keyCode == 114) {
-                      $(".r .switcher-toggler").click()
-                  }
-                  if (e.wich == 118 || e.keyCode == 118) {
-                      $(".ver").click()
-                  }
               });
-       });
+          });
 
     $(".ver").on("click", function () {
         $(".frente").toggleClass("hidden");

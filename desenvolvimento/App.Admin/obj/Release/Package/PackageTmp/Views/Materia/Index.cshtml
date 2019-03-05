@@ -24,7 +24,8 @@
         <thead>
             <tr>
                 <th>Nome</th>
-                <th width="150">Cor</th>
+                <th width="150">Cor da Borda</th>
+                <th width="150">Cor do Fundo</th>
                 <th width="150">Ação</th>
             </tr>
         </thead>
@@ -47,6 +48,13 @@
                 { "sName": "Nome", "bSortable": false },
                 {
                     "sName": "CorBorda",
+                    "bSortable": false,
+                    "mRender": function (data, type, full) {
+                        return `<div style="color:${data};background-color:${data}">${data}</div>`;
+                    }
+                },
+                {
+                    "sName": "CorFundo",
                     "bSortable": false,
                     "mRender": function (data, type, full) {
                         return `<div style="color:${data};background-color:${data}">${data}</div>`;
