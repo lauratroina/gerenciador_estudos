@@ -113,7 +113,8 @@
                     "bSortable": false,
                     "mRender": function (data, type, full) {
                         return `<a href="@Url.Action("Editar", "FlashCard")/${data}" class="btn btn-xs btn-warning btn-flat">Editar</a>&nbsp;
-                        <a href="@Url.Action("Deletar", "FlashCard")/${data}" class="btn btn-xs btn-danger btn-flat">Excluir</a>`;
+                        <a href="@Url.Action("Deletar", "FlashCard")/${data}" class="btn btn-xs btn-danger btn-flat">Excluir</a>
+                        &nbsp;<a href="@Url.Action("Ver", "FlashCard")/${data}" class="btn btn-xs btn-info btn-flat">Ver</a>`;
                     }
                 }
             ]

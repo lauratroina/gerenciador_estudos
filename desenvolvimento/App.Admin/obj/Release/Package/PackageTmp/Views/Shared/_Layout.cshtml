@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>@ViewBag.Title &raquo; next</title>
+    <title>@ViewBag.Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="sname" content="@Environment.MachineName">
     <style>
@@ -54,9 +54,6 @@
 
             <div class="navbar-inner">
                 <div class="navbar-header">
-                    <a href="@Url.Action("Index", "Home")" class="navbar-brand">
-                        <img src="@Url.Content("~/Content/images/logo.png")" alt="Bradesco" style="margin-top: -5px; height: 47px;"> &nbsp;<span style="font-size:10px;"><b>admin</b></span>
-                    </a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i class="navbar-icon fa fa-bars"></i></button>
                 </div>
                 <!-- / .navbar-header -->
@@ -64,6 +61,7 @@
                 <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
                     <div>
                         <ul class="nav navbar-nav">
+
                             <li><a href="@Url.Action("Index", "Materia")"><i class="menu-icon fa fa-book"></i> <span class="mm-text">&nbsp;&nbsp;Matérias</span></a></li>
                             <li><a href="@Url.Action("Index", "FlashCard")"><i class="menu-icon fa fa-edit"></i> <span class="mm-text">&nbsp;&nbsp;Flash Cards</span></a></li>
 

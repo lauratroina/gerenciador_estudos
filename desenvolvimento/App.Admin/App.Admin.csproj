@@ -414,6 +414,7 @@
     <Content Include="Views\Conta\AlterarSenha.cshtml" />
     <Content Include="Views\Conta\Index.cshtml" />
     <Content Include="Views\Conta\SemPermissao.cshtml" />
+    <Content Include="Views\FlashCard\Ver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

@@ -189,7 +189,7 @@ namespace App.Lib.DAL.ADO
             string sql = @"SELECT top 1 * FROM Sorteio s 
                             LEFT JOIN Carta c ON c.ID = s.CartaID 
                             LEFT JOIN Materia m ON m.ID = c.MateriaID
-                            WHERE s.IdentificadorSorteio = @identificador AND s.Vista = 0";
+                            WHERE s.IdentificadorSorteio = @identificador AND s.Vista = 0 ORDER BY NEWID()";
 
             using (var con = _db.CreateConnection())
             {

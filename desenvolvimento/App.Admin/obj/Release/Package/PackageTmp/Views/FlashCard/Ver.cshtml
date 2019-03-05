@@ -1,6 +1,6 @@
-﻿@model Sorteio
+﻿@model Carta
 @{
-    string corTexto = Model.Carta.Materia.CorBorda == "#ffffff" ? (Model.Carta.Materia.CorFundo == "#ffffff" ? "#000000" : Model.Carta.Materia.CorFundo) : Model.Carta.Materia.CorBorda;
+    string corTexto = Model.Materia.CorBorda == "#ffffff" ? (Model.Materia.CorFundo == "#ffffff" ? "#000000" : Model.Materia.CorFundo) : Model.Materia.CorBorda;
 }
 
 <div class="page-header">
@@ -17,25 +17,20 @@
 @Html.HiddenFor(i => Model.ID, new { @id = "ID" })
 
 
-<div class="panel" style="border-color:@Model.Carta.Materia.CorBorda">
+<div class="panel" style="border-color:@Model.Materia.CorBorda">
     <div class="panel-heading">
         <br />
         <div class="row">
             <div class="form-group col-md-4" style="color:@(corTexto);">
-                <b>[@Model.Carta.ID] - @Model.Carta.Materia.Nome.ToUpper()</b>
+                <b>[@Model.ID] - @Model.Materia.Nome.ToUpper()</b>
             </div>
             <div class="form-group col-sm-2 f">
                 <label>Favorita</label>
-                <input type="checkbox" data-id="@Model.Carta.ID" data-inativo="@Model.Carta.Favorita.ToString()" @(Model.Carta.Favorita ? "checked='checked'" : "") class="switcher-example-default favoritar" />
+                <input type="checkbox" data-id="@Model.ID" data-inativo="@Model.Favorita.ToString()" @(Model.Favorita ? "checked='checked'" : "") class="switcher-example-default favoritar" />
             </div>
             <div class="form-group  col-sm-2 a">
                 <label>Ativa</label>
-                <input type="checkbox" data-id="@Model.Carta.ID" data-inativo="@Model.Carta.Status.ToString()" @(Model.Carta.Status ? "checked='checked'" : "") class="switcher-example-default inativar" />
-            </div>
-            <div class="form-group  col-sm-2 r">
-                <label>Repetir</label>
-                <input type="checkbox" data-inativo="False" class="switcher-example-default repetir" />
-
+                <input type="checkbox" data-id="@Model.ID" data-inativo="@Model.Status.ToString()" @(Model.Status ? "checked='checked'" : "") class="switcher-example-default inativar" />
             </div>
             <div class="form-group  col-sm-2">
                 <div class="pull-right">
@@ -44,20 +39,20 @@
             </div>
         </div>
     </div>
-    <div class="panel-body" style="background:@Model.Carta.Materia.CorFundo">
+    <div class="panel-body" style="background:@Model.Materia.CorFundo">
 
         <div class="form-group frente">
-            @Html.Raw(Model.Carta.TextoFrente)
+            @Html.Raw(Model.TextoFrente)
         </div>
         <div class="form-group verso hidden">
-            @Html.Raw(Model.Carta.TextoVerso)
+            @Html.Raw(Model.TextoVerso)
         </div>
 
         <div class="form-group">
             <div class="pull-right">
                 @*<button type="button" class="btn-secondary btn btn-flat btn-labeled"><span class="btn-label icon fa fa-arrow-left"></span>Anterior</button>*@
                 &nbsp;
-                <button type="button" class="btn-secondary btn btn-flat btn-labeled proximo"><span class="btn-label icon fa fa-arrow-right"></span>Próxima</button>
+                @*<button type="button" class="btn-secondary btn btn-flat btn-labeled proximo"><span class="btn-label icon fa fa-arrow-right"></span>Próxima</button>*@
             </div>
         </div>
     </div>
@@ -68,11 +63,11 @@
 
 <script>
       init.push(function () {
-              $(".proximo").on("click", function () {
+              @*$(".proximo").on("click", function () {
                   var url = '@Url.Action("Detalhe", "Flashcard")';
                   url += '?id=' + '@Model.IdentificadorSorteio' + '&r=' + $(".repetir").data("inativo") + "&idc=" + '@Model.ID';
                  location.href=url;
-              });
+              });*@
 
               $('.inativar').on("click", function () {
                   if ($(this).data("inativo") == "False") {
@@ -114,7 +109,7 @@
                   if (e.wich == 32 || e.keyCode == 32) {
                       $(".proximo").click();
                   }
-                  if (e.wich == 102 || e.keyCode == 102) {                      
+                  if (e.wich == 102 || e.keyCode == 102) {
                       $(".f .switcher-toggler").click()
                   }
                   if (e.wich == 97 || e.keyCode == 97) {
@@ -136,3 +131,4 @@
 
 
 </script>
+

@@ -15,7 +15,7 @@ namespace App.Admin.Controllers
 {
     public class FlashCardController : MasterController
     {
-        
+
         public ActionResult Index()
         {
             return View();
@@ -199,14 +199,14 @@ namespace App.Admin.Controllers
             }
             return RedirectToAction("Detalhe", "FlashCard", new { id = Identificador });
         }
-        
-        public ActionResult Detalhe(Guid id, bool r = false, int idc=0)
+
+        public ActionResult Detalhe(Guid id, bool r = false, int idc = 0)
         {
             CartaService service = new CartaService();
             Sorteio retorno = new Sorteio();
             try
             {
-                if(!r && idc > 0)
+                if (!r && idc > 0)
                 {
                     service.ApagaSorteio(idc);
                 }
@@ -214,7 +214,7 @@ namespace App.Admin.Controllers
                 if (retorno == null)
                 {
                     retorno = service.Carregar(id);
-                    if(retorno == null)
+                    if (retorno == null)
                     {
                         return RedirectToAction("Index", "FlashCard", new { msg = "Não há mais cartas", msgtipo = enumTipoMensagem.sucesso });
                     }
@@ -223,6 +223,21 @@ namespace App.Admin.Controllers
             catch (Exception ex)
             { }
             return View(retorno);
+        }
+
+        public ActionResult Ver(int id)
+        {
+            Carta model = new Carta();
+            try
+            {
+                CartaService service = new CartaService();
+                model = service.Carregar(id);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Flashcards", new { msg = "Ocorreu um erro ao carregar essa carta.", msgtipo = enumTipoMensagem.erro });
+            }
+            return View(model);
         }
     }
 }
