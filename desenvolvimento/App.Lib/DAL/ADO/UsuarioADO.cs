@@ -48,7 +48,7 @@ namespace App.Lib.DAL.ADO
                                 Senha = @Senha,
                                 Nome = @Nome,
                                 Inativo = @Inativo, 
-                                Email = @EmailS
+                                Email = @Email
                           WHERE ID=@ID ";
 
             using (DbConnection con = _db.CreateConnection())

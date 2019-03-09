@@ -16,7 +16,10 @@ namespace App.Admin.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Index", "Materia");
+            if(SessionModel.Usuario.Perfil.Nome == enumPerfilNome.convidado)
+                return RedirectToAction("Filtrar", "FlashCard");
+            return RedirectToAction("Index", "FlashCard");
+
         }
     }
 }

@@ -21,18 +21,26 @@
     <div class="panel-heading">
         <br />
         <div class="row">
-            <div class="form-group col-md-4" style="color:@(corTexto);">
+            <div class="form-group col-md-4 col-xs-12" style="color:@(corTexto);">
                 <b>[@Model.ID] - @Model.Materia.Nome.ToUpper()</b>
             </div>
-            <div class="form-group col-sm-2 f">
-                <label>Favorita</label>
-                <input type="checkbox" data-id="@Model.ID" data-inativo="@Model.Favorita.ToString()" @(Model.Favorita ? "checked='checked'" : "") class="switcher-example-default favoritar" />
-            </div>
-            <div class="form-group  col-sm-2 a">
-                <label>Ativa</label>
-                <input type="checkbox" data-id="@Model.ID" data-inativo="@Model.Status.ToString()" @(Model.Status ? "checked='checked'" : "") class="switcher-example-default inativar" />
-            </div>
-            <div class="form-group  col-sm-2">
+            @if (Session.GetModel<SessionModel>().Usuario.Perfil.Nome == enumPerfilNome.master)
+            {
+                <div class="form-group col-md-2 col-xs-6 f">
+                    <label>Favorita</label>
+                    <input type="checkbox" data-id="@Model.ID" data-inativo="@Model.Favorita.ToString()" @(Model.Favorita ? "checked='checked'" : "") class="switcher-example-default favoritar" />
+                </div>
+                <div class="form-group  col-md-2 col-xs-6 a">
+                    <label>Ativa</label>
+                    <input type="checkbox" data-id="@Model.ID" data-inativo="@Model.Status.ToString()" @(Model.Status ? "checked='checked'" : "") class="switcher-example-default inativar" />
+                </div>
+            }
+            @*<div class="form-group  col-md-2 col-xs-6 r">
+                <label>Repetir</label>
+                <input type="checkbox" data-inativo="False" class="switcher-example-default repetir" />
+
+            </div>*@
+            <div class="form-group  col-md-2 col-xs-6">
                 <div class="pull-right">
                     <button type="button" class="btn-secondary btn btn-flat btn-labeled ver"><span class="btn-label icon fa fa-search"></span>Ver</button>
                 </div>

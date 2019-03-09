@@ -2,7 +2,7 @@
     ViewBag.Title = "Flash Cards";
 }
 
-
+@Html.Hidden("perfil", Session.GetModel<SessionModel>().Usuario.Perfil.Nome )
 <div class="page-header">
     <div class="row">
         <h1 class="col-xs-12 col-sm-4 text-center text-left-sm"><i class="fa fa-edit page-header-icon"></i>&nbsp;&nbsp;@ViewBag.Title</h1>
@@ -42,7 +42,7 @@
 <script type="text/javascript">
 
     init.push(function () {
-
+        var perfil = 
         $('#jq-datatable').on("draw.dt", function () {
             $('#jq-datatable .chk-inativar').on("click", function () {
                 if ($(this).data("inativo") == "False") {
@@ -72,7 +72,7 @@
 
             $('#jq-datatable .switcher-example-default').switcher();
         });
-
+      
         $('#jq-datatable').dataTable({
             "bServerSide": true,
             "sPaginationType": "full_numbers",
@@ -95,7 +95,7 @@
                     "bSortable": false,
                     "mRender": function (data, type, full) {
                         var idinativo = data.split("-");
-                        return '<input type="checkbox" data-id="' + idinativo[1] + '" data-inativo="' + idinativo[0] + '" ' + (idinativo[0] == "True" ? 'checked="checked"' : '') + ' class="chk-inativar switcher-example-default" /> ';
+                        return '<input type="checkbox" data-id="' + idinativo[1] + '" data-inativo="' + idinativo[0] + '" ' + (idinativo[0] == "True" ? 'checked="checked"' : '') + ' class="chk-inativar switcher-example-default"' + ($("#perfil").val() == "convidado"?"disabled":"")+'/>';
                     }
                 },
                 {
@@ -103,8 +103,9 @@
                     "bSearchable": false,
                     "bSortable": false,
                     "mRender": function (data, type, full) {
+                        
                         var idinativo = data.split("-");
-                        return '<input type="checkbox" data-id="' + idinativo[1] + '" data-inativo="' + idinativo[0] + '" ' + (idinativo[0] == "True" ? 'checked="checked"' : '') + ' class="chk-favoritar switcher-example-default" /> ';
+                        return '<input type="checkbox" data-id="' + idinativo[1] + '" data-inativo="' + idinativo[0] + '" ' + (idinativo[0] == "True" ? 'checked="checked"' : '') + ' class="chk-favoritar switcher-example-default" ' + ($("#perfil").val() == "convidado" ? "disabled" : "")+'/> ';
                     }
                 },
                 {
@@ -112,8 +113,9 @@
                     "bSearchable": false,
                     "bSortable": false,
                     "mRender": function (data, type, full) {
-                        return `<a href="@Url.Action("Editar", "FlashCard")/${data}" class="btn btn-xs btn-warning btn-flat">Editar</a>&nbsp;
-                        <a href="@Url.Action("Deletar", "FlashCard")/${data}" class="btn btn-xs btn-danger btn-flat">Excluir</a>
+                        var disabled = ($("#perfil").val() == "convidado" ? "disabled" : "");
+                        return `<a href="@Url.Action("Editar", "FlashCard")/${data}" class="btn btn-xs btn-warning btn-flat" ${disabled}>Editar</a>&nbsp;
+                        <a href="@Url.Action("Deletar", "FlashCard")/${data}" class="btn btn-xs btn-danger btn-flat" ${disabled}>Excluir</a>
                         &nbsp;<a href="@Url.Action("Ver", "FlashCard")/${data}" class="btn btn-xs btn-info btn-flat">Ver</a>`;
                     }
                 }
